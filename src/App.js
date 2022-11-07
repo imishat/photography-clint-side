@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Layout/Main';
 import Home from './pages/Home/Home';
 import Error from './pages/ErrorPages/Error';
+import Login from './pages/FromPages/Loginpage/Login';
+import Sing from './pages/FromPages/SingPage/Sing';
 
 function App() {
   const router=createBrowserRouter([
@@ -15,6 +17,14 @@ function App() {
         {
           path:'/',
           element:<Home></Home>
+        },
+        {
+          path:'/login',
+          element:<Login></Login>
+        },
+        {
+          path:"/singup",
+          element:<Sing></Sing>
         }
 
       ]
