@@ -1,4 +1,5 @@
 import React from 'react';
+import Section from './Section';
 
 const Home = () => {
     return (
@@ -15,23 +16,14 @@ const Home = () => {
 </div>
 
 {}
-<div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row">
-    <img src="https://st2.depositphotos.com/1007499/9305/v/950/depositphotos_93058918-stock-illustration-25-years-experience-rosette.jpg" className="max-w-sm rounded-lg shadow-2xl" />
-    
-    <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="p-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">READ MORE</button>
-    </div>
-  </div>
-</div>
+<Section></Section>
+
 []
         
      <h1>CARD HERW</h1>   
         
     [] 
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero bg-base-200 w-1/2 mx-auto h-100">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <img src="https://placeimg.com/260/400/arch" className="max-w-sm rounded-lg shadow-2xl" />
     <div>
@@ -44,35 +36,29 @@ const Home = () => {
 []  
 
 <h1>carosole start</h1>
-<div className="carousel w-full">
+<div className="carousel w-1/2 mx-auto">
   <div id="slide1" className="carousel-item relative w-full">
-    <img src="https://placeimg.com/800/200/arch" className="w-full" />
+    <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5YFcHg3FePQjcSH339ytYi4Ele5NcjU0eP3Miahp0TXQm0mmA2te_1LwnLf62gHBWGZI&usqp=CAU" className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide4" className="btn btn-circle">❮</a> 
       <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
   </div> 
   <div id="slide2" className="carousel-item relative w-full">
-    <img src="https://placeimg.com/800/200/arch" className="w-full" />
+    <img src="https://www.townsdelight.com/storage/app/uploads/public/5dc/d18/ca2/5dcd18ca20fc3446928848.jpg" className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide1" className="btn btn-circle">❮</a> 
       <a href="#slide3" className="btn btn-circle">❯</a>
     </div>
   </div> 
   <div id="slide3" className="carousel-item relative w-full">
-    <img src="https://placeimg.com/800/200/arch" className="w-full" />
+    <img src="https://cdn.mos.cms.futurecdn.net/Kip8ACyXTVXwRZpY8unm9W.jpg" className="w-full" />
     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
       <a href="#slide2" className="btn btn-circle">❮</a> 
-      <a href="#slide4" className="btn btn-circle">❯</a>
-    </div>
-  </div> 
-  <div id="slide4" className="carousel-item relative w-full">
-    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-      <a href="#slide3" className="btn btn-circle">❮</a> 
       <a href="#slide1" className="btn btn-circle">❯</a>
     </div>
-  </div>
+  </div> 
+  
 </div>
 
 
