@@ -12,7 +12,7 @@ const Sing = () => {
         createUser(email,password)
         .then(resutl=>{
             const user=resutl.user;
-            console.log(user)
+           
         })
         .catch(error=>console.error(error))
     
