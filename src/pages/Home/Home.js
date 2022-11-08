@@ -1,7 +1,9 @@
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 import Section from './Section';
 
 const Home = () => {
+  useTitle('Home')
     return ( <>
       <div className="hero min-h-screen" style={{ backgroundImage: `url("http://www.imgworlds.com/wp-content/uploads/2015/11/img-blvd.jpg")` }}>
 <div className="hero-overlay bg-opacity-60"></div>

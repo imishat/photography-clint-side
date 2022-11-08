@@ -2,16 +2,18 @@ import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const AllServices = ({service}) => {
     const {name,titel,balance,picture,_id}=service
+    useTitle('services')
     return (
         <div className="card w-96 bg-base-100 shadow-xl ">
         <figure>
         <PhotoProvider>
         <PhotoView src={picture}>
-  <img src={picture} style={{ objectFit: 'cover' }} alt="" />
-</PhotoView>
+       <img src={picture} style={{ objectFit: 'cover',height:'300px' }} alt="" />
+      </PhotoView>
         </PhotoProvider>
             </figure>
         <div className="card-body">

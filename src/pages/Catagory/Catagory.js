@@ -1,8 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Catagory = () => {
     const{name,titel,balance,picture,_id}=useLoaderData()
+    useTitle('catagory')
     return (
 
         <div className="drawer drawer-mobile">
@@ -14,7 +16,9 @@ const Catagory = () => {
     <h2 className="card-title">{name}</h2>
     <p>{titel}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
+      <button className="btn btn-primary">
+      <Link to='/'>Go Home</Link>
+      </button>
     </div>
   </div>
 </div>

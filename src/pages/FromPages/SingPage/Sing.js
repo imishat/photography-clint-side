@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const Sing = () => {
     const {createUser}=useContext(AuthContext)
+    useTitle('singUp')
     const handleSignUp = event =>{
         event.preventDefault();
         const form = event.target;
