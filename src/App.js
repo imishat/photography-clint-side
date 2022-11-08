@@ -7,6 +7,7 @@ import Error from './pages/ErrorPages/Error';
 import Login from './pages/FromPages/Loginpage/Login';
 import Sing from './pages/FromPages/SingPage/Sing';
 import Services from './pages/Services/Services';
+import Catagory from './pages/Catagory/Catagory';
 
 function App() {
   const router=createBrowserRouter([
@@ -33,6 +34,11 @@ function App() {
           element:<Services></Services>
 
 
+        },
+        {
+          path:'/catagory/:id',
+          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`),
+          element:<Catagory></Catagory>
         }
 
       ]
