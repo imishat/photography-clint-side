@@ -6,6 +6,7 @@ import Home from './pages/Home/Home';
 import Error from './pages/ErrorPages/Error';
 import Login from './pages/FromPages/Loginpage/Login';
 import Sing from './pages/FromPages/SingPage/Sing';
+import Services from './pages/Services/Services';
 
 function App() {
   const router=createBrowserRouter([
@@ -25,6 +26,13 @@ function App() {
         {
           path:"/singup",
           element:<Sing></Sing>
+        },
+        {
+          path:'/services',
+          loader:()=>fetch('http://localhost:5000/services'),
+          element:<Services></Services>
+
+
         }
 
       ]

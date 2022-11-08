@@ -22,9 +22,9 @@ const Home = () => {
    <h1>CARD HERW</h1>   
       
   [] 
-  <div className="hero bg-base-200 w-full mx-auto h-100">
-<div className="hero-content flex-col lg:flex-row-reverse">
-  <img src="https://i.pinimg.com/originals/f2/b8/02/f2b802ee42a39c58732a595cf24d358f.jpg" className="max-w-lg rounded-lg shadow-2xl" />
+  <div className="hero bg-base-200 w-full mx-auto h-100  ">
+<div className="hero-content flex-col lg:flex-row-reverse sm:w-1/2">
+  <img src="https://i.pinimg.com/originals/f2/b8/02/f2b802ee42a39c58732a595cf24d358f.jpg" className="max-w-lg   rounded-lg shadow-2xl" />
   <div>
     <h1 className="text-5xl font-bold p-6 text-orange-400">Works Process With Team Leaders</h1>
     <div>
