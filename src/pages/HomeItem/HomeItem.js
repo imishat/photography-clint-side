@@ -16,7 +16,7 @@ const HomeItem = ({item}) => {
                     <div className="card-actions justify-between">
                         <div className="btn btn-outline btn-warning">Price: $ {balance}</div>
                         <div className="btn btn-primary">
-                            <Link to='/services'>Learn more!</Link>
+                            <Link to='/services'>SEE ALL</Link>
                             
                             </div>
                     </div>
