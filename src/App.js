@@ -11,6 +11,7 @@ import Catagory from './pages/Catagory/Catagory';
 import CreateService from './pages/CreateService/CreateService';
 import Blogs from './pages/Blogs/Blogs';
 import { ToastContainer } from 'react-toastify';
+import PrivetRouts from './pages/Routs/PrivetRouts';
 
 function App() {
   const router=createBrowserRouter([
@@ -45,7 +46,7 @@ function App() {
         },
         {
           path:'/create',
-          element:<CreateService></CreateService>
+          element:<PrivetRouts><CreateService></CreateService></PrivetRouts>
         },
         {
           path:'/blogs',

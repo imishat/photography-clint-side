@@ -1,4 +1,6 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 
 const HomeItem = ({item}) => {
@@ -6,7 +8,16 @@ const HomeItem = ({item}) => {
         ,picture}=item
     return (
         <div className="card w-96 bg-base-100 shadow-xl ">
-                <figure><img src={picture} alt="Shoes" /></figure>
+                <figure>
+                <PhotoProvider>
+        
+        <PhotoView src={picture}>
+           <img src={picture} style={{ objectFit: 'cover' }} alt="" />
+          
+          </PhotoView>
+        </PhotoProvider>
+
+                </figure>
                 <div className="card-body">
                     <h2 className="card-title">
                         {name}
