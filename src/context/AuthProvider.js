@@ -17,6 +17,7 @@ const AuthProvider = ({children}) => {
     }
     //singup
     const createUser=(email,password)=>{
+       setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
     //logout
