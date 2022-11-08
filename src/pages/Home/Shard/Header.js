@@ -12,11 +12,11 @@ const Header = () => {
     }
 
     const menuItems = <>
-        <li className='font-semibold'><Link to='/'>Blogs</Link></li>
+        <li className='font-semibold'><Link to='/blogs'>Blogs</Link></li>
         {
             user?.email ?
                 <>
-                    <li className='font-semibold'><Link to='/orders'>ADD service</Link></li>
+                    <li className='font-semibold'><Link to='/create'>ADD service</Link></li>
                     <li className='font-semibold'><Link to='/orders'>My reviews</Link></li>
                     
                     <li className='font-semibold'>
@@ -40,7 +40,7 @@ const Header = () => {
                 </ul>
             </div>
             <Link to="/" className="btn btn-ghost normal-case text-xl">
-                <img src='' alt="" />
+                <img style={{ height: '70px' }} src='https://media.istockphoto.com/photos/digital-camera-picture-id1330178261?b=1&k=20&m=1330178261&s=170667a&w=0&h=lmOmWapMWbVHIpiPisliTO6W5W8sJx7uuDJLO1BenZI=' alt="" />
             </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

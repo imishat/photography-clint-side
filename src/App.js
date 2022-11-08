@@ -8,6 +8,9 @@ import Login from './pages/FromPages/Loginpage/Login';
 import Sing from './pages/FromPages/SingPage/Sing';
 import Services from './pages/Services/Services';
 import Catagory from './pages/Catagory/Catagory';
+import CreateService from './pages/CreateService/CreateService';
+import Blogs from './pages/Blogs/Blogs';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const router=createBrowserRouter([
@@ -39,6 +42,14 @@ function App() {
           path:'/catagory/:id',
           loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`),
           element:<Catagory></Catagory>
+        },
+        {
+          path:'/create',
+          element:<CreateService></CreateService>
+        },
+        {
+          path:'/blogs',
+          element:<Blogs></Blogs>
         }
 
       ]
@@ -49,6 +60,7 @@ function App() {
       <RouterProvider router={router}>
 
       </RouterProvider>
+      <ToastContainer />
     </div>
     
     
