@@ -4,7 +4,7 @@ import HomeItem from '../HomeItem/HomeItem';
 const Section = () => {
     const[item,setItem]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/service')
+        fetch('https://pothoserver.vercel.app/service')
         .then(res=>res.json())
         .then(data=>setItem(data))
 

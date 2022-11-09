@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import Reviews from '../RewiewPages/Reviews';
 
 const Catagory = () => {
     const{name,titel,balance,picture,_id}=useLoaderData()
     useTitle('catagory')
+    const [reviews, setReviews] = useState([])
+
+
+    const handlReview = event => {
+      event.preventDefault()
+      const form = event.target;
+      const review = form.review.value;
+      form.reset()
+      console.log(review)
+      fetch('https://pothoserver.vercel.app/review', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({review}),
+      })
+          .then(res => res.json())
+          .then(data => console.log(data))
+          .catch(err => console.error(err))
+
+
+  }
+  useEffect(() => {
+      fetch('https://pothoserver.vercel.app/review')
+          .then(res => res.json())
+          .then(data => setReviews(data))
+  }, [reviews])
     return (
       <div>
             <h2 className='text-4xl font-bold text-center my-5'>Service Detalis</h2>
@@ -25,12 +53,17 @@ const Catagory = () => {
 
                     <div className="card-actions justify-between">
                         <div className="btn btn-outline btn-warning">price: $ {balance}</div>
-                        {/* <Link to="/costomer" className="btn btn-primary">Review</Link> */}
+                        
                     </div>
 
                     <div className='w-full'>
                         <h2 className='text-5xl font-bold text-center my-5'>All Review</h2>
-                        <form className="card-body bg-primary">
+                        {
+                            reviews.map(review => <Reviews key={review._id} reviews={review}></Reviews>)
+                        }
+
+
+                        <form onSubmit={handlReview} className="card-body bg-primary">
                             <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text font-bold text-xl">Comment</span>

@@ -11,7 +11,10 @@ import Catagory from './pages/Catagory/Catagory';
 import CreateService from './pages/CreateService/CreateService';
 import Blogs from './pages/Blogs/Blogs';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import PrivetRouts from './pages/Routs/PrivetRouts';
+import OwnReview from './pages/OwnReview/OwnReview';
+import Reviews from './pages/RewiewPages/Reviews';
 
 function App() {
   const router=createBrowserRouter([
@@ -34,15 +37,15 @@ function App() {
         },
         {
           path:'/services',
-          loader:()=>fetch('http://localhost:5000/services'),
+          loader:()=>fetch('https://pothoserver.vercel.app/services'),
           element:<Services></Services>
 
 
         },
         {
           path:'/catagory/:id',
-          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`),
-          element:<Catagory></Catagory>
+          loader:({params})=>fetch(`https://pothoserver.vercel.app/services/${params.id}`),
+          element:<PrivetRouts><Catagory></Catagory></PrivetRouts>
         },
         {
           path:'/create',
@@ -51,13 +54,21 @@ function App() {
         {
           path:'/blogs',
           element:<Blogs></Blogs>
+        },
+        {
+          path:'/review',
+          element:<OwnReview></OwnReview>
+        },
+        {
+          path:'/re',
+          element:<PrivetRouts><Reviews></Reviews></PrivetRouts>
         }
 
       ]
     }
   ])
   return (
-    <div data-theme="light">
+    <div data-theme="light" className='max-w-screen-xl mx-auto'>
       <RouterProvider router={router}>
 
       </RouterProvider>

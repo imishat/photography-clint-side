@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 
 import Section from './Section';
@@ -12,36 +13,41 @@ const Home = () => {
   <div className="max-w-md">
     <h1 className="mb-5 text-5xl font-bold text-orange-300">SAYASOBI</h1>
     <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-    <button className="btn btn-outline btn-success">DISCOVER MORE</button>
+    <button className="btn btn-outline btn-success">
+      <Link to='/services'>DISCOVER MORE</Link></button>
   </div>
 </div>
 </div>
 
-{}
+
 <Section></Section>
 
 
-[]
-      
-   <h1>CARD HERW</h1>   
-      
-  [] 
-  <div className="hero bg-base-200 w-full mx-auto h-100  ">
-<div className="hero-content flex-col lg:flex-row-reverse sm:w-1/2">
-  <img src="https://i.pinimg.com/originals/f2/b8/02/f2b802ee42a39c58732a595cf24d358f.jpg" className="max-w-lg   rounded-lg shadow-2xl" />
-  <div>
-    <h1 className="text-5xl font-bold p-6 text-orange-400">Works Process With Team Leaders</h1>
-    <div>
-    <p className=" font-bold p-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-    </div>
-    <button className="btn btn-primary m-7">Get Started</button>
-  </div>
-</div>
-</div>
-[]  
 
-<h1>carosole start</h1>
-<div className="carousel w-2/3 mx-auto">
+      
+   
+      
+  
+  <div className="card card-side bg-base-100 shadow-xl mt-5">
+            <div className="card-body">
+                <p className='card-title text-yellow-300'>Click</p>
+                <h2 className="text-5xl font-bold text-orange-400">Works Process With Team Leaders</h2>
+                
+                <p className='my-5'>Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.!</p>
+                <div className="card-actions justify-start">
+                    <button className="btn btn-primary"> 
+                    <Link to='/services'>Get Start</Link></button>
+                </div>
+            </div>
+
+            <figure className='w-1/2'><img src="https://i.pinimg.com/originals/f2/b8/02/f2b802ee42a39c58732a595cf24d358f.jpg" alt="Movie" /></figure>
+
+        </div>
+  
+
+
+
+<div className="carousel w-2/3 mx-auto mt-5">
 <div id="slide1" className="carousel-item relative w-full">
   <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5YFcHg3FePQjcSH339ytYi4Ele5NcjU0eP3Miahp0TXQm0mmA2te_1LwnLf62gHBWGZI&usqp=CAU" className="w-full" />
   <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -65,11 +71,11 @@ const Home = () => {
 </div> 
 
 </div>
-<h1>new</h1>
 
 
 
-<h1>palns</h1>
+
+
 <div className="max-w-3xl mx-auto bg-gray-100" >
   <div className="text-center my-10">
       <h1 className="font-bold text-3xl mb-2 text-orange-500">PRICING PLANS</h1>
