@@ -6,34 +6,50 @@ const Catagory = () => {
     const{name,titel,balance,picture,_id}=useLoaderData()
     useTitle('catagory')
     return (
+      <div>
+            <h2 className='text-4xl font-bold text-center my-5'>Service Detalis</h2>
+            <div className="lg:w-1/2 sm:w-full lg:mx-auto">
+                <figure className="px-10 pt-10">
+                    <img src={picture} alt="Shoes" className="rounded-xl mx-auto" />
+                </figure>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title"> {name}</h2>
+                    <div className="rating">
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                    </div>
+                    <p>{titel}</p>
 
-        <div className="drawer drawer-mobile">
-  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content flex flex-col items-center justify-center">
-  <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src={picture} alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">{name}</h2>
-    <p>{titel}</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">
-      <Link to='/'>Go Home</Link>
-      </button>
-    </div>
-  </div>
-</div>
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden mt-3">ADD REVIEW</label>
-  
-  </div> 
-  <div className="drawer-side">
-    <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-       Sidebar content her
-     <h1>add commnrt</h1>
-    </ul>
-  
-  </div>
-</div>
+                    <div className="card-actions justify-between">
+                        <div className="btn btn-outline btn-warning">price: $ {balance}</div>
+                        {/* <Link to="/costomer" className="btn btn-primary">Review</Link> */}
+                    </div>
+
+                    <div className='w-full'>
+                        <h2 className='text-5xl font-bold text-center my-5'>All Review</h2>
+                        <form className="card-body bg-primary">
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text font-bold text-xl">Comment</span>
+                                </label>
+                                <textarea className="textarea textarea-bordered" name='review' placeholder="Describe Your Experience..."></textarea>
+                            </div>
+                            <div className="form-control mt-6">
+                                <input className="btn btn-outline btn-warning" type="submit" value="Add Review" />
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        
     );
 };
 

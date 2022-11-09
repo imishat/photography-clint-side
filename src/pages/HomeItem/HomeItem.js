@@ -26,7 +26,7 @@ const HomeItem = ({item}) => {
                         {name}
                         <div className="badge badge-secondary">NEW</div>
                     </h2>
-                    <p>{titel.slice(0, 100)+"......"}</p>
+                    <p>{titel?.slice(0, 100)+"......"}</p>
                     <div className="card-actions justify-between">
                         <div className="btn btn-outline btn-warning">Price: $ {balance}</div>
                         <div className="btn btn-primary">

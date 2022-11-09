@@ -1,5 +1,6 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
+
 import Section from './Section';
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
 
 {}
 <Section></Section>
+
 
 []
       
@@ -63,6 +65,8 @@ const Home = () => {
 </div> 
 
 </div>
+<h1>new</h1>
+
 
 
 <h1>palns</h1>
