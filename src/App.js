@@ -57,7 +57,7 @@ function App() {
         },
         {
           path:'/review',
-          element:<OwnReview></OwnReview>
+          element:<PrivetRouts><OwnReview></OwnReview></PrivetRouts>
         },
         {
           path:'/re',

@@ -19,7 +19,7 @@ const OwnReview = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to cancel this Review');
         if(proceed){
-            fetch(`https://pothoserver.vercel.app/review/${id}`, {
+            fetch(`https://pothoserver-imishat.vercel.app/review/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -32,6 +32,29 @@ const OwnReview = () => {
                 }
             })
         }
+    }
+    //update
+    const handleStatusUpdate = id => {
+        fetch(`https://pothoserver-imishat.vercel.app/review/${id}`, {
+            method: 'PATCH', 
+            headers: {
+                'content-type': 'application/json'
+            },
+        
+            body: JSON.stringify({status: 'Approved'})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.modifiedCount > 0) {
+                const remaining = review.filter(rev => rev._id !== id);
+                const approving = review.find(rev => rev._id === id);
+                approving.status = 'Approved'
+
+                const newReview = [approving, ...remaining];
+                setReview(newReview);
+            }
+        })
     }
 
     return (
@@ -52,6 +75,7 @@ const OwnReview = () => {
                         {
                             review.map(r=><EmailReview key={r._id} r={r}
                                 handleDelete={handleDelete}
+                                handleStatusUpdate={handleStatusUpdate}
                             ></EmailReview>)
                         }
                     </tbody>

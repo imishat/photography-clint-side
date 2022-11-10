@@ -1,9 +1,9 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
 
-const EmailReview = ({r,handleDelete}) => {
+const EmailReview = ({r,handleDelete,handleStatusUpdate }) => {
     useTitle('Review')
-    const{review,_id,}=r
+    const{review,_id,status}=r
     return (
         <div>
             <tr>
@@ -16,8 +16,9 @@ const EmailReview = ({r,handleDelete}) => {
        
         <th>
                 <button 
+               onClick={() => handleStatusUpdate(_id)}
                
-                className="btn btn-ghost btn-xs">E</button>
+               className="btn btn-outline btn-error">{status ? status : 'Update'}</button>
             </th>
       </tr>
         </div>
