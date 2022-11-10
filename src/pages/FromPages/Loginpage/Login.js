@@ -2,14 +2,26 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
+import { FcGoogle } from 'react-icons/fa';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const {login}=useContext(AuthContext)
+    const {login,googleSignIn }=useContext(AuthContext)
     const location = useLocation();
     const navigate = useNavigate();
     useTitle('Login')
 
     const from = location.state?.from?.pathname || '/';
+    const GoogleProvider=new GoogleAuthProvider()
+    const googleLogin = () => {
+        googleSignIn(GoogleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                navigate(from,{replace:true})
+            })
+            .catch(err => console.log(err))
+    }
 
 
     const handleLogin = event => {
@@ -78,13 +90,19 @@ const Login = () => {
                         <input type="password" name='password' placeholder="password" className="input input-bordered" />
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                            
                         </label>
+                        
                     </div>
                     <div className="form-control mt-6">
                         <input className="btn btn-primary" type="submit" value="Login" />
                     </div>
                 </form>
                 <p className='text-center'>Go To SINGUP PAGES <Link className='text-orange-600 font-bold' to="/singup">Sign Up</Link> </p>
+                <div className="form-control mt-6">
+                <button onClick={googleLogin} className="btn btn-outline btn-accent">Google</button>
+                    </div>
+                    
             </div>
         </div>
     </div>
