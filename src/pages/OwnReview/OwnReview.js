@@ -19,7 +19,7 @@ const OwnReview = () => {
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure, you want to cancel this Review');
         if(proceed){
-            fetch(`https://pothoserver-imishat.vercel.app/review/${id}`, {
+            fetch(`https://pothoserver.vercel.app/review/${id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -35,7 +35,7 @@ const OwnReview = () => {
     }
     //update
     const handleStatusUpdate = id => {
-        fetch(`https://pothoserver-imishat.vercel.app/review/${id}`, {
+        fetch(`https://pothoserver.vercel.app/review/${id}`, {
             method: 'PATCH', 
             headers: {
                 'content-type': 'application/json'
